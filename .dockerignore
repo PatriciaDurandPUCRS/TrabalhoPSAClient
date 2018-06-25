@@ -1,0 +1,8 @@
+# IDE files
+.idea
+.vscode
+
+# local development files
+dist
+node_modules
+typings

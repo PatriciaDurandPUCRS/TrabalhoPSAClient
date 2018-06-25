@@ -1,0 +1,35 @@
+@import '~@/assets/scss/colors';
+
+$modalHeading: $portGore;
+$primaryHeadingColor: $portGore;
+$primaryLabelColor: $baliHai;
+$hintTextColor: $doveGray;
+
+/* tabs colors */
+$tabInactiveColor: $silver;
+$tabActiveColor: $dodgerBlue;
+
+/* border colors */
+$borderColor: $gallery;
+
+/* modal footer */
+$modalFooter: $concrete;
+$modalFooterTextColor: $mineShaft;
+$modalFooterPhoneTextColor: $doveGray;
+$modalFooterBorder: $dustyGray;
+
+$messageSuccess: $portGore;
+
+/* Text colors */
+// $primaryTextColor: $emperor;
+$primaryTextColor: $portGore;
+$secondaryTextColor: $baliHai;
+
+/* Config */
+$baseline: 8px;
+
+/* Header */
+$heightMenuTop: 80px;
+$widthMenuLeft: 190px;
+$widthMenuLeftSmall: 170px;
+$widthInnerMenuLeft: 230px;
