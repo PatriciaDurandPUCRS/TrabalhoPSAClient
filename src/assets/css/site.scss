@@ -1,10 +1,15 @@
-body {
-  background-color: #547cb8;
-  color: #fff;
+.Content {
+  background-color: #eee;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  margin: 30px;
+}
+
+.logo {
+  padding: 20px;
+  width: 250px;
 }
 
 footer {
@@ -36,22 +41,20 @@ button {
   button {
     display: block;
     font-weight: 700;
-    font-size: 1.4rem;
     margin: 20px auto;
-    height: 100px;
-    width: 200px;
   }
 }
 
 .Login {
-  background: white;
-  border-radius: 30px;
-  color: #000;
-  max-width: 300px;
-  margin: 20px auto;
-  padding: 30px;
+  text-align: center;
 
-  a {
-    text-align: right;
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  button {
+    display: block;
+    font-weight: 700;
+    margin: 20px auto;
   }
 }

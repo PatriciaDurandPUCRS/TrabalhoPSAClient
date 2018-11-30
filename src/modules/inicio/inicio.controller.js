@@ -12,7 +12,7 @@ function inicioController(modalService) {
   function ticket(){
     //emitir ticket
     //abrir modal para mostrar o ticket emitido
-    this.modalService.openModal("3b4hb324hv");
+    // this.modalService.openModal("3b4hb324hv");
   }
 
 }

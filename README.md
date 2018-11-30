@@ -19,4 +19,4 @@ npm run build --report
 
 ```
 
-> Trabalho desenvolvido por Patrícia Durand e Andreas Specht
+> Trabalho desenvolvido por Patrícia Durand

@@ -112,6 +112,6 @@ import angular from 'angular';
 
       // .state('store', store);
 
-    $urlRouterProvider.otherwise('/inicio');
+    $urlRouterProvider.otherwise('/login');
   }
 })();

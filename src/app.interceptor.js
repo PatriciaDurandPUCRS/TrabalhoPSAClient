@@ -22,11 +22,6 @@ import httpStatus from 'http-status';
         $window.sessionStorage.token = token;
       }
 
-      const { corebankingToken } = result.data;
-      if (corebankingToken) {
-        $window.sessionStorage.corebankingToken = corebankingToken;
-      }
-
       if (result.config.url.match('api/')) {
         $rootScope.numLoading -= 1;
         if ($rootScope.numLoading === 0) {
@@ -53,10 +48,6 @@ import httpStatus from 'http-status';
 
       if ($window.sessionStorage.token) {
         config.headers['x-access-token'] = $window.sessionStorage.token;
-      }
-
-      if ($window.sessionStorage.corebankingToken) {
-        config.headers['x-corebanking-token'] = $window.sessionStorage.corebankingToken;
       }
 
       return config;

@@ -2,15 +2,19 @@ import angular from 'angular';
 
 angular.module('app').controller('loginController', loginController);
 
-/* @ngInject */
 function loginController(loginDataService) {
-  const vm = this; // jshint ignore:line
+  const vm = this;
   this.loginDataService = loginDataService;
   vm.logar = logar;
   vm.credencial = {};
 
   function logar(){
-    this.loginDataService.logar(vm.credencial);
+    try {
+      var response = this.loginDataService.logar(vm.credencial);
+
+    } catch (e) {
+
+    }
   }
 
 }

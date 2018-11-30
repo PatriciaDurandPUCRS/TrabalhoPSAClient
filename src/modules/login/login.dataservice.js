@@ -11,15 +11,7 @@
       return apiService.post({
         route: LOGIN_URL,
         payload: credential,
-        callback: getResult,
-        error(response) {
-          console.log(response);
-        },
       });
-    }
-
-    function getResult(response) {
-      return response.data;
     }
   }
 }());
