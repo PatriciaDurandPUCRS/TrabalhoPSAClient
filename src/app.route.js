@@ -31,14 +31,14 @@ import angular from 'angular';
       controllerAs: 'vm',
     };
 
-    // const recuperarSenha = {
-    //   url: '/recuperar-senha',
-    //   template: () =>
-    //     import('@/components/autenticacao/recuperar-senha/recuperar.senha.html' /* webpackChunkName: 'vRecuperarSenha' */),
-    //   controller: 'recuperarSenhaController',
-    //   controllerAs: 'recuperarSenhaController',
-    // };
-    //
+    const turma = {
+      url: '/turmas',
+      template: () =>
+        import('@/modules/turma/turma.html' /* webpackChunkName: 'vRecuperarSenha' */),
+      controller: 'turmaController',
+      controllerAs: 'vm',
+    };
+
     // const alterarSenha = {
     //   url: '/redef/:token',
     //   template: () =>
@@ -97,8 +97,8 @@ import angular from 'angular';
 
     $stateProvider
       .state('inicio', inicio)
-      .state('login', login);
-      // .state('recuperarSenha', recuperarSenha)
+      .state('login', login)
+      .state('turma', turma);
       // .state('alterarSenha', alterarSenha)
       //
       // .state('app', app)

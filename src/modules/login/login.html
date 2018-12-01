@@ -1,15 +1,15 @@
 <section class="Login">
-  <div class="Content">
+  <div class="Content Login">
     <h1 class="title">Sistema de matrícula</h1>
 
     <form name="formLogin" ng-submit="vm.logar()" autocomplete="off">
-      <div>
+      <div class="Login formulario-campos">
         <label>Usuário</label>
         <md-input-container md-no-float>
           <input id="usuario" type="text" placeholder="Digite seu usuário" required ng-model="vm.credencial.user"></input>
         </md-input-container>
       </div>
-      <div>
+      <div class="Login formulario-campos">
         <label>Senha</label>
         <md-input-container md-no-float>
           <input id="senha" type="password" placeholder="Digite sua senha" required ng-model="vm.credencial.password"></input>
@@ -19,5 +19,9 @@
         <button ng-disabled="formLogin.$invalid" class="btn btn-default" type="submit">LOGAR</button>
       </div>
     </form>
+
+    <a ui-sref="turma">
+      <span>Página de horários disponíveis</span>
+    </a>
   </div>
 </section>

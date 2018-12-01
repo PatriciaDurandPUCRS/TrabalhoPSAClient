@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-class ModalSuccesso {
+class ModalErro {
   /* @ngInject */
   constructor($mdDialog, message) {
     this.closeModal = () => $mdDialog.hide();
@@ -8,4 +8,4 @@ class ModalSuccesso {
   }
 }
 
-export default angular.module('app').controller('modalSucesso', ModalSuccesso);
+export default angular.module('app').controller('modalSucesso', ModalErro);

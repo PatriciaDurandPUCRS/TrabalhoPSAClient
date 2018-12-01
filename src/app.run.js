@@ -12,12 +12,12 @@ const appRun = (
   decoratorHelper.injector = $injector;
 
   $transitions.onEnter({}, (transition, state) => {
-    const publicStates = ['login', 'usuario', 'inicio'];
-    const isRestrictedState = !publicStates.includes(state.name);
-
-    if (!$rootScope.authenticated && isRestrictedState) {
-      return transition.router.stateService.target('inicio');
-    }
+    // const publicStates = ['login', 'usuario', 'inicio'];
+    // const isRestrictedState = !publicStates.includes(state.name);
+    //
+    // if (!$rootScope.authenticated && isRestrictedState) {
+    //   return transition.router.stateService.target('inicio');
+    // }
 
     return true;
   });

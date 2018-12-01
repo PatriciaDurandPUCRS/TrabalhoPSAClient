@@ -4,13 +4,13 @@ angular.module('app').controller('loginController', loginController);
 
 function loginController(loginDataService) {
   const vm = this;
-  this.loginDataService = loginDataService;
+  vm.loginDataService = loginDataService;
   vm.logar = logar;
   vm.credencial = {};
 
   function logar(){
     try {
-      var response = this.loginDataService.logar(vm.credencial);
+      var response = vm.loginDataService.logar(vm.credencial);
 
     } catch (e) {
 
