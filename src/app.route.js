@@ -15,18 +15,10 @@ import angular from 'angular';
     //   abstract: true,
     // };
 
-    const inicio = {
-      url: '/inicio',
-      template: () =>
-        import('@/modules/inicio/inicio.html' /* webpackChunkName: 'vInicio' */),
-      controller: 'inicioController',
-      controllerAs: 'vm',
-    };
-
     const login = {
       url: '/login',
       template: () =>
-        import('@/modules/login/login.html' /* webpackChunkName: 'vInicio' */),
+        import('@/modules/login/login.html' /* webpackChunkName: 'vLogin' */),
       controller: 'loginController',
       controllerAs: 'vm',
     };
@@ -44,9 +36,8 @@ import angular from 'angular';
       template: () =>
         import('@/modules/menu/menu.html' /* webpackChunkName: 'vRedifinirSenha' */),
       controller: 'menuController',
-      controllerAs: 'menuController',
+      controllerAs: 'vm',
     };
-    
     
     // const conta = {
     //   template: '<div ui-view></div>',
@@ -96,7 +87,6 @@ import angular from 'angular';
     // };
 
     $stateProvider
-      .state('inicio', inicio)
       .state('login', login)
       .state('turma', turma)
       .state('menu', menu);

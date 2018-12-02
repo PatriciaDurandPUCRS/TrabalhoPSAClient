@@ -6,17 +6,17 @@ const appRun = (
   $rootScope, $transitions, $location, $state, $injector
 ) => {
   $rootScope._ = window._;
-  $rootScope.authenticated = false;
+  $rootScope.autenticado = false;
 
   decoratorHelper.injector = $injector;
 
   $transitions.onEnter({}, (transition, state) => {
-    // const publicStates = ['login', 'usuario', 'inicio'];
-    // const isRestrictedState = !publicStates.includes(state.name);
-    //
-    // if (!$rootScope.authenticated && isRestrictedState) {
-    //   return transition.router.stateService.target('inicio');
-    // }
+    const publicStates = ['login', 'turma'];
+    const isRestrictedState = !publicStates.includes(state.name);
+    
+    if (!$rootScope.autenticado && isRestrictedState) {
+      return transition.router.stateService.target('login');
+    }
 
     return true;
   });

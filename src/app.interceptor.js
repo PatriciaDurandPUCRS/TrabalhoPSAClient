@@ -12,12 +12,6 @@ import httpStatus from 'http-status';
     };
 
     function response(response) {
-      console.log(response.headers('role'));
-      console.log(response.headers());
-      if (response.headers('role')) {
-        $rootScope.permissao = response.headers('role');
-      }
-
       window.scrollTo(0, 0);
 
       return response;
@@ -27,10 +21,6 @@ import httpStatus from 'http-status';
       window.scrollTo(0, 0);
 
       config.headers = config.headers || {};
-
-      if ($window.sessionStorage.token) {
-        config.headers['x-access-token'] = $window.sessionStorage.token;
-      }
 
       return config;
     }

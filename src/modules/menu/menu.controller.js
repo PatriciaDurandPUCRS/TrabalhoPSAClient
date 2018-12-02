@@ -3,13 +3,19 @@ import angular from 'angular';
 angular.module('app').controller('menuController', menuController);
 
 /* @ngInject */
-function menuController($state, modalService) {
+function menuController($state, $rootScope) {
   const vm = this; // jshint ignore:line
-  // this.modalService = modalService;
+  vm.permissao = permissao;
 
   vm.$onInit = function () {
-    ($state.autenticado) ? showMenu() : $state.go('login');
-  };
+    if (!$rootScope.autenticado) {
+      $state.go('login');
+    }
+  }
+
+  function permissao(role) {
+    return $rootScope.permissao == role;
+  }
 
 }
 

@@ -13,9 +13,8 @@ function loginController(loginDataService, modalService, $state, $rootScope) {
     try {
       vm.loginDataService.logar(vm.credencial)
       .then(response => {
-        debugger;
-
         $rootScope.autenticado = response.status == 200;
+        $rootScope.permissao = response.data.permissao;
         $state.go('menu');
       })
       .catch(response => {
