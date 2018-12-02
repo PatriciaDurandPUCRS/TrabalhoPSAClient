@@ -4,7 +4,7 @@ import angular from 'angular';
   angular
     .module('app')
     .constant('_', window._)
-    .constant('API_URL', process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api')
+    .constant('API_URL', process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5001/api')
     .config(Configuration);
 
   /* @ngInject */

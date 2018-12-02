@@ -55,11 +55,6 @@ import angular from 'angular';
     }
 
     function logErrorDetails(error) {
-      $rootScope.numLoading--;
-      if ($rootScope.numLoading === 0) {
-        $rootScope.loadingShow = false;
-      }
-
       modalService.openModal(error.mensagem);
       const errorMessage = $filter('string-format')('Ocorreu um erro ao chamar o endpoint {0}: {1} -> {2}', API_URL + error.config.url);
       $log.error(errorMessage);

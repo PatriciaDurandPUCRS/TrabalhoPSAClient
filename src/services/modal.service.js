@@ -6,14 +6,14 @@ angular.module('app').service('modalService', modalService);
 function modalService($mdDialog) {
   return {
     fecharModal,
-    openModal,
+    openModalErro,
   };
 
   function fecharModal() {
     $mdDialog.hide();
   }
 
-  function openModal(message, cb = () => { }) {
+  function openModalErro(message, cb = () => { }) {
     $mdDialog.show({
       controllerAs: 'vm',
       controller: 'modalSucesso',

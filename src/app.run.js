@@ -7,7 +7,6 @@ const appRun = (
 ) => {
   $rootScope._ = window._;
   $rootScope.authenticated = false;
-  $rootScope.numLoading = 0;
 
   decoratorHelper.injector = $injector;
 

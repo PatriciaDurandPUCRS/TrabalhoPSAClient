@@ -39,15 +39,15 @@ import angular from 'angular';
       controllerAs: 'vm',
     };
 
-    // const alterarSenha = {
-    //   url: '/redef/:token',
-    //   template: () =>
-    //     import('@/components/autenticacao/recuperar-senha/recuperar.senha.html' /* webpackChunkName: 'vRedifinirSenha' */),
-    //   controller: 'recuperarSenhaController',
-    //   controllerAs: 'recuperarSenhaController',
-    // };
-    //
-    //
+    const menu = {
+      url: '/menu',
+      template: () =>
+        import('@/modules/menu/menu.html' /* webpackChunkName: 'vRedifinirSenha' */),
+      controller: 'menuController',
+      controllerAs: 'menuController',
+    };
+    
+    
     // const conta = {
     //   template: '<div ui-view></div>',
     //   abstract: true,
@@ -98,7 +98,8 @@ import angular from 'angular';
     $stateProvider
       .state('inicio', inicio)
       .state('login', login)
-      .state('turma', turma);
+      .state('turma', turma)
+      .state('menu', menu);
       // .state('alterarSenha', alterarSenha)
       //
       // .state('app', app)
