@@ -31,7 +31,7 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
     matriculaDataService.adicionarDisciplina(turma, $rootScope.usuario.matricula)
       .then(response => {
         vm.grade = response.data;
-        console.log(vm.grade);
+        buscaTurmas($rootScope.usuario.matricula);
       })
       .catch(response => {
         vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao adicionar disciplina.');

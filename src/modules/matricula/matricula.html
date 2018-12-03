@@ -7,8 +7,8 @@
 
     <div>
       <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
-        <li ng-click="turma.qtdTotal > 0 && vm.adicionarGrade(turma)" ng-class="{'disabled': turma.qtdTotal == 0}">
-          <div>{{turma.codCred}} (vagas: {{turma.qtdTotal}})</div>
+        <li ng-click="turma.qtdTotal > 0 && vm.adicionarGrade(turma)" ng-class="{'disabled': turma.qtdDisponivel == 0}">
+          <div>{{turma.codCred}} (vagas: {{turma.qtdDisponivel}})</div>
           <div>{{turma.disciplina}}</div>
           <div>{{turma.turma}} - {{turma.horario}}</div>
         </li>

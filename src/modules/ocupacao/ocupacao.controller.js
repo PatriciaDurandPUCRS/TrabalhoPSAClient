@@ -7,6 +7,7 @@ function ocupacaoController($rootScope, $state, ocupacaoDataService, modalServic
   const vm = this; // jshint ignore:line
   vm.modalService = modalService;
   vm.buscaOcupacao = buscaOcupacao;
+  vm.ocupacaoPercentual = ocupacaoPercentual;
   vm.listaTurmaOcupacao = {};
 
   vm.$onInit = function () {
@@ -26,6 +27,10 @@ function ocupacaoController($rootScope, $state, ocupacaoDataService, modalServic
       .catch(response => {
         vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao efetuar a busca.');
       });
+  }
+
+  function ocupacaoPercentual(turma) {
+    return 100 - turma.qtdDisponivel * 100 / turma.qtdTotal;
   }
 
 }
