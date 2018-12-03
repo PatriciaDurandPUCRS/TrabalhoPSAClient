@@ -8,9 +8,8 @@
     };
 
     function getListaTurmas(disciplina) {
-      const param = disciplina.codCred ? disciplina.codCred : disciplina.nome;
       return apiService.get({
-        route: $filter('string-format')(TURMA_DETALHE_URL, param),
+        route: $filter('string-format')(TURMA_DETALHE_URL, disciplina.nome, disciplina.codCred),
         success: (response) => { return response },
       });
     }

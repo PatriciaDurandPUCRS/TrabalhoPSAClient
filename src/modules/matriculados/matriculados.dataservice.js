@@ -4,7 +4,7 @@
   /* @ngInject */
   function matriculadosDataService($filter, apiService, TURMA_MATRICULADOS_URL) {
     return {
-      getListaTurmas,
+      getlistaMatriculados,
     };
 
     function getlistaMatriculados(disciplina) {

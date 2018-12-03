@@ -16,13 +16,13 @@
         </div>
       </form>
   
-      <div ng-show='vm.listaMatriculados.length === 0'>{{vm.listaMatriculadosMensagem}}</div>
-  
-      <ul ng-repeat="turma in vm.listaMatriculados" ng-show='vm.listaMatriculados.length > 0'>
-        <li>
-          <div>{{turma.codCred}} {{turma.disciplina}} ({{turma.turma}} - {{turma.horario}})</div>
-          <div>vagas: {{turma.qtd}}</div>
-        </li>
+      <!-- <div ng-show='vm.listaMatriculados.length === 0'>{{vm.listaMatriculadosMensagem}}</div> -->
+
+      <ul ng-repeat="(key, value) in vm.listaMatriculados">
+          <li>{{ key }}</li>
+          <div ng-repeat="disciplina in value">
+            <span>{{ disciplina.matricula }}</span>
+          </div>
       </ul>
   </div>
 </section>
