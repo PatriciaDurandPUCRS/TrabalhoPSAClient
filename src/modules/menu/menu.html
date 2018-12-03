@@ -1,14 +1,14 @@
 <section class="Menu">
   <div class="Content">
     <section ng-if="vm.permissao('ALUNO')">
-      <button>Matrícula</button>
-      <button>Histórico</button>
+      <button ng-click="vm.irPara('matricula')">Matrícula</button>
+      <button ng-click="vm.irPara('historico')">Histórico</button>
     </section>
 
     <section ng-if="vm.permissao('COORDENACAO')">
-      <button>Percentual de ocupação</button>
-      <button>Alunos matriculados</button>
-      <button>Total de matrículas</button>
+      <button ng-click="vm.irPara('ocupacao')">Percentual de ocupação</button>
+      <button ng-click="vm.irPara('matriculados')">Alunos matriculados</button>
+      <button ng-click="vm.irPara('totalMatriculados')">Total de matrículas</button>
     </section>
   </div>
 </section>

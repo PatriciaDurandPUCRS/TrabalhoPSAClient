@@ -10,11 +10,6 @@ import angular from 'angular';
       requireBase: false,
     });
 
-    // const app = {
-    //   template: () => import('@/components/layout-interno.html' /* webpackChunkName: 'vLayoutInterno' */),
-    //   abstract: true,
-    // };
-
     const login = {
       url: '/login',
       template: () =>
@@ -26,7 +21,7 @@ import angular from 'angular';
     const turma = {
       url: '/turmas',
       template: () =>
-        import('@/modules/turma/turma.html' /* webpackChunkName: 'vRecuperarSenha' */),
+        import('@/modules/turma/turma.html' /* webpackChunkName: 'vTurma' */),
       controller: 'turmaController',
       controllerAs: 'vm',
     };
@@ -34,74 +29,60 @@ import angular from 'angular';
     const menu = {
       url: '/menu',
       template: () =>
-        import('@/modules/menu/menu.html' /* webpackChunkName: 'vRedifinirSenha' */),
+        import('@/modules/menu/menu.html' /* webpackChunkName: 'vMenu' */),
       controller: 'menuController',
       controllerAs: 'vm',
     };
-    
-    // const conta = {
-    //   template: '<div ui-view></div>',
-    //   abstract: true,
-    // };
-    //
-    // const minhaConta = {
-    //   url: '^/lancamentos',
-    //   template: () => import('@/components/conta/minha-conta/minha.conta.html' /* webpackChunkName: 'vMinhaConta' */),
-    //   controller: 'minhaContaController',
-    //   controllerAs: 'minhaContaController',
-    // };
-    //
-    // const transferencia = {
-    //   url: '^/transferencia',
-    //   template: () =>
-    //     import('@/components/conta/transferencia/transferencia.html' /* webpackChunkName: 'vTransferencia' */),
-    //   controller: 'transferenciaController',
-    //   controllerAs: 'transferenciaController',
-    //   params: {
-    //     valorTransferencia: 0,
-    //   },
-    // };
-    //
-    // const scheduling = {
-    //   url: '^/agendamentos',
-    //   component: 'scheduling',
-    // };
-    //
-    // const saque = {
-    //   url: '^/saque',
-    //   template: () => import('@/components/conta/saque/saque.html' /* webpackChunkName: 'vSaque' */),
-    //   controller: 'saqueController',
-    //   controllerAs: 'vm',
-    // };
-    //
-    // const deposito = {
-    //   url: '^/deposito',
-    //   template: () => import('@/components/conta/deposito/deposito.html' /* webpackChunkName: 'vDeposito' */),
-    //   controller: 'depositoController',
-    //   controllerAs: 'vm',
-    // };
-    //
-    // const store = {
-    //   url: '/app',
-    //   template: '<div ui-view></div>',
-    // };
 
+    const matricula = {
+      url: '/matricula',
+      template: () =>
+        import('@/modules/matricula/matricula.html' /* webpackChunkName: 'vMatricula' */),
+      controller: 'matriculaController',
+      controllerAs: 'vm',
+    };
+
+    const historico = {
+      url: '/historico',
+      template: () =>
+        import('@/modules/historico/historico.html' /* webpackChunkName: 'vHistorico' */),
+      controller: 'historicoController',
+      controllerAs: 'vm',
+    };
+
+    const ocupacao = {
+      url: '/ocupacao',
+      template: () =>
+        import('@/modules/ocupacao/ocupacao.html' /* webpackChunkName: 'vOcupacao' */),
+      controller: 'ocupacaoController',
+      controllerAs: 'vm',
+    };
+
+    const matriculados = {
+      url: '/matriculados',
+      template: () =>
+        import('@/modules/matriculados/matriculados.html' /* webpackChunkName: 'vMatriculados' */),
+      controller: 'matriculadosController',
+      controllerAs: 'vm',
+    };
+
+    const totalMatriculados = {
+      url: '/totalMatriculados',
+      template: () =>
+        import('@/modules/totalMatriculados/totalMatriculados.html' /* webpackChunkName: 'vTotalMatriculados' */),
+      controller: 'totalMatriculadosController',
+      controllerAs: 'vm',
+    };
+    
     $stateProvider
       .state('login', login)
       .state('turma', turma)
-      .state('menu', menu);
-      // .state('alterarSenha', alterarSenha)
-      //
-      // .state('app', app)
-      //
-      // .state('app.conta', conta)
-      // .state('app.conta.lancamentos', minhaConta)
-      // .state('app.conta.transferencia', transferencia)
-      // .state('app.conta.scheduling', scheduling)
-      // .state('app.conta.saque', saque)
-      // .state('app.conta.deposito', deposito)
-
-      // .state('store', store);
+      .state('menu', menu)
+      .state('matricula', matricula)
+      .state('historico', historico)
+      .state('ocupacao', ocupacao)
+      .state('matriculados', matriculados)
+      .state('totalMatriculados', totalMatriculados);
 
     $urlRouterProvider.otherwise('/login');
   }

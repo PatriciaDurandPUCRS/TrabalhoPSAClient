@@ -6,6 +6,7 @@ angular.module('app').controller('menuController', menuController);
 function menuController($state, $rootScope) {
   const vm = this; // jshint ignore:line
   vm.permissao = permissao;
+  vm.irPara = irPara;
 
   vm.$onInit = function () {
     if (!$rootScope.autenticado) {
@@ -15,6 +16,10 @@ function menuController($state, $rootScope) {
 
   function permissao(role) {
     return $rootScope.permissao == role;
+  }
+
+  function irPara(route) {
+    $state.go(route);
   }
 
 }
