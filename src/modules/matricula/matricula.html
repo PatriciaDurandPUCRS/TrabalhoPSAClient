@@ -1,27 +1,27 @@
 <section class="Content">
-  <!-- <div class="Matricula">
-    <a ui-sref='login'>Voltar</a>
-    <h1>Horários disponíveis</h1>
-    <form name="formTurmas" ng-submit="vm.buscaTurmas(vm.disciplina)" autocomplete="off">
-      <div class="Turma formulario">
-        <md-input-container md-no-float>
-          <input id="usuario" type="text" placeholder="Código (00000-00)" ng-model="vm.disciplina.codCred"></input>
-        </md-input-container>
-        <span>ou</span>
-        <md-input-container md-no-float>
-          <input id="senha" type="text" placeholder="Nome da disciplina" ng-model="vm.disciplina.nome"></input>
-        </md-input-container>
-        <button class="btn btn-default" type="submit">BUSCAR</button>
-      </div>
-    </form>
+  <div class="Matricula">
+    <header>
+      <a ui-sref='menu'>Voltar</a>
+      <h1>Matrícula</h1>
+    </header>
 
-    <div ng-show='vm.listaTurmas.length === 0'>{{vm.listaTurmaMensagem}}</div>
+    <div>
+      <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
+        <li ng-click="turma.qtdTotal > 0 && vm.adicionarGrade(turma)" ng-class="{'disabled': turma.qtdTotal == 0}">
+          <div>{{turma.codCred}} (vagas: {{turma.qtdTotal}})</div>
+          <div>{{turma.disciplina}}</div>
+          <div>{{turma.turma}} - {{turma.horario}}</div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2>GRADE DE HORÀRIOS ALOCADOS</h2>
 
-    <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
-      <li>
-        <div>{{turma.codCred}} {{turma.disciplina}} ({{turma.turma}} - {{turma.horario}})</div>
-        <div>vagas: {{turma.qtd}}</div>
-      </li>
-    </ul>
-  </div> -->
+      <table ng-class="grade" cellpadding="3" cellspacing="3">
+        <tr ng-repeat="(key, value) in vm.grade">
+          <td>{{value}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </section>

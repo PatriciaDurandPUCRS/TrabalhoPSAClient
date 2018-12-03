@@ -6,7 +6,7 @@
     <ul ng-repeat="turma in vm.listaTurmaOcupacao" ng-show='vm.listaTurmaOcupacao.length > 0'>
       <li>
         <div>{{turma.codCred}} {{turma.disciplina}} ({{turma.turma}} - {{turma.horario}})</div>
-        <div>vagas disponíveis: {{turma.qtd}} | Ocupação: 0%</div>
+        <div>vagas disponíveis: {{turma.qtdTotal}} | Ocupação: 0%</div>
       </li>
     </ul>
   </div>

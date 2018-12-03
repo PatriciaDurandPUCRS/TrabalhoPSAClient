@@ -3,7 +3,7 @@ import angular from 'angular';
 angular.module('app').controller('ocupacaoController', ocupacaoController);
 
 /* @ngInject */
-function ocupacaoController(ocupacaoDataService, modalService, $rootScope) {
+function ocupacaoController($rootScope, $state, ocupacaoDataService, modalService, ) {
   const vm = this; // jshint ignore:line
   vm.modalService = modalService;
   vm.buscaOcupacao = buscaOcupacao;

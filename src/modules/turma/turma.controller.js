@@ -3,7 +3,7 @@ import angular from 'angular';
 angular.module('app').controller('turmaController', turmaController);
 
 /* @ngInject */
-function turmaController(turmaDataService, modalService, $filter) {
+function turmaController(turmaDataService, modalService) {
   const vm = this; // jshint ignore:line
   vm.buscaTurmas = buscaTurmas;
   vm.turmaDataService = turmaDataService;

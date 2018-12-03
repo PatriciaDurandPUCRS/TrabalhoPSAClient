@@ -2,7 +2,7 @@ import angular from 'angular';
 
 angular.module('app').controller('loginController', loginController);
 
-function loginController(loginDataService, modalService, $state, $rootScope) {
+function loginController($rootScope, $state, loginDataService, modalService) {
   const vm = this;
   vm.loginDataService = loginDataService;
   vm.modalService = modalService;

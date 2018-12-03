@@ -3,7 +3,7 @@ import angular from 'angular';
 angular.module('app').controller('menuController', menuController);
 
 /* @ngInject */
-function menuController($state, $rootScope) {
+function menuController($rootScope, $state) {
   const vm = this; // jshint ignore:line
   vm.permissao = permissao;
   vm.irPara = irPara;

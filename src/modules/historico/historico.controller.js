@@ -3,7 +3,7 @@ import angular from 'angular';
 angular.module('app').controller('historicoController', historicoController);
 
 /* @ngInject */
-function historicoController($rootScope, historicoDataService, modalService) {
+function historicoController($rootScope, $state, historicoDataService, modalService) {
   const vm = this; // jshint ignore:line
   vm.buscaHistorico = buscaHistorico;
   vm.historicoDataService = historicoDataService;

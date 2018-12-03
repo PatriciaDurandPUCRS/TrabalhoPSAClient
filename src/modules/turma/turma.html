@@ -1,6 +1,6 @@
 <section class="Content">
   <div class="Turma">
-    <a ui-sref='login'>Voltar</a>
+    <a ui-sref='menu'>Voltar</a>
     <h1>Horários disponíveis</h1>
     <form name="formTurmas" ng-submit="vm.buscaTurmas(vm.disciplina)" autocomplete="off">
       <div class="Turma formulario">
@@ -19,7 +19,7 @@
     <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
       <li>
         <div>{{turma.codCred}} {{turma.disciplina}} ({{turma.turma}} - {{turma.horario}})</div>
-        <div>vagas: {{turma.qtd}}</div>
+        <div>vagas: {{turma.qtdTotal}}</div>
       </li>
     </ul>
 
