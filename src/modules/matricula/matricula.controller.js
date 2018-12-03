@@ -12,7 +12,12 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
   vm.grade = {};
 
   vm.$onInit = function () {
-    (!$rootScope.autenticado) ? $state.go('login') : buscaTurmas($rootScope.usuario.matricula);
+    if (!$rootScope.autenticado) {
+      $state.go('login');
+    } else {
+      buscaTurmas($rootScope.usuario.matricula);
+      buscaGrade($rootScope.usuario.matricula);
+    }
   }
 
   function buscaTurmas(matricula) {
@@ -27,11 +32,24 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
       });
   }
 
+  function buscaGrade(matricula) {
+    vm.listaTurmas = {};
+    matriculaDataService.getGrade(matricula)
+      .then(response => {
+        vm.grade = response.data;
+        console.log(vm.grade);
+      })
+      .catch(response => {
+        vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao efetuar a busca.');
+      });
+  }
+
   function adicionarGrade(turma) {
     matriculaDataService.adicionarDisciplina(turma, $rootScope.usuario.matricula)
       .then(response => {
         vm.grade = response.data;
         buscaTurmas($rootScope.usuario.matricula);
+        buscaGrade($rootScope.usuario.matricula);
       })
       .catch(response => {
         vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao adicionar disciplina.');

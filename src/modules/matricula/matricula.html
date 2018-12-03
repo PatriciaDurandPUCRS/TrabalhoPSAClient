@@ -4,9 +4,9 @@
       <a ui-sref='menu'>Voltar</a>
       <h1>Matrícula</h1>
     </header>
-
     <div>
-      <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
+      <h2>Disciplinas matriculadas</h2>
+      <ul ng-repeat="turma in vm.grade" ng-show='vm.grade.length > 0'>
         <li ng-click="turma.qtdTotal > 0 && vm.adicionarGrade(turma)" ng-class="{'disabled': turma.qtdDisponivel == 0}">
           <div>{{turma.codCred}} (vagas: {{turma.qtdDisponivel}})</div>
           <div>{{turma.disciplina}}</div>
@@ -14,14 +14,16 @@
         </li>
       </ul>
     </div>
-    <div>
-      <h2>GRADE DE HORÀRIOS ALOCADOS</h2>
 
-      <table ng-class="grade" cellpadding="3" cellspacing="3">
-        <tr ng-repeat="(key, value) in vm.grade">
-          <td>{{value}}</td>
-        </tr>
-      </table>
+    <div>
+      <h2>Disciplinas disponíveis</h2>
+      <ul ng-repeat="turma in vm.listaTurmas" ng-show='vm.listaTurmas.length > 0'>
+        <li ng-click="turma.qtdTotal > 0 && vm.adicionarGrade(turma)" ng-class="{'disabled': turma.qtdDisponivel == 0}">
+          <div>{{turma.codCred}} (vagas: {{turma.qtdDisponivel}})</div>
+          <div>{{turma.disciplina}}</div>
+          <div>{{turma.turma}} - {{turma.horario}}</div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

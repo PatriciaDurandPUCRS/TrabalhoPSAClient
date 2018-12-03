@@ -7,5 +7,6 @@ angular.module('app')
   .constant('TURMA_DETALHE_URL', '/turma/detalhe/?nome={0}&codCred={1}')
   .constant('TURMA_OCUPACAO_URL', '/turma/ocupacao')
   .constant('TURMA_MATRICULADOS_URL', '/turma/matriculados/?disciplina={0}')
-  .constant('HISTORICO_URL', '/turma/historico/{0}');
+  .constant('HISTORICO_URL', '/turma/historico/{0}')
+  .constant('GRADE_URL', '/turma/grade/{0}');
   
