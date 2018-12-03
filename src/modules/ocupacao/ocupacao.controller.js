@@ -3,25 +3,28 @@ import angular from 'angular';
 angular.module('app').controller('ocupacaoController', ocupacaoController);
 
 /* @ngInject */
-function ocupacaoController(turmaDataService, modalService, $filter) {
+function ocupacaoController(ocupacaoDataService, modalService, $rootScope) {
   const vm = this; // jshint ignore:line
-  vm.buscaTurmas = buscaTurmas;
-  vm.turmaDataService = turmaDataService;
   vm.modalService = modalService;
-  vm.disciplina = {
-    codcred: '',
-    nome: '',
-  };
+  vm.buscaOcupacao = buscaOcupacao;
+  vm.listaTurmaOcupacao = {};
 
-  function buscaTurmas(disciplina) {
-    vm.listaTurmas = {};
-    turmaDataService.getListaTurmas(disciplina)
+  vm.$onInit = function () {
+    if (!$rootScope.autenticado || $rootScope.permissao != 'COORDENACAO') {
+      $state.go('login');
+    } else {
+      vm.buscaOcupacao();
+    }
+  }
+
+  function buscaOcupacao() {
+    vm.listaTurmaOcupacao = {};
+    ocupacaoDataService.getListaTurmaOcupacao()
       .then(response => {
-        vm.listaTurmas = response.data;
-        vm.listaTurmaMensagem = vm.listaTurmas.length == 0 ? 'Não encontramos nenhuma disciplina com os dados inseridos!' : '';
+        vm.listaTurmaOcupacao = response.data;
       })
       .catch(response => {
-        vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao buscar a disciplina.');
+        vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao efetuar a busca.');
       });
   }
 

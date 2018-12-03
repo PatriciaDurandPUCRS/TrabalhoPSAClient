@@ -1,5 +1,6 @@
-<section class="Menu">
-  <div class="Content">
+<section class="Content">
+  <div class="Menu">
+    <a ui-sref="login" class="btn-sair">Sair</a>
     <section ng-if="vm.permissao('ALUNO')">
       <button ng-click="vm.irPara('matricula')">Matrícula</button>
       <button ng-click="vm.irPara('historico')">Histórico</button>

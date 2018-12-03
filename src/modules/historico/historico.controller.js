@@ -21,7 +21,7 @@ function historicoController(turmaDataService, modalService, $filter) {
   //       vm.listaTurmaMensagem = vm.listaTurmas.length == 0 ? 'Não encontramos nenhuma disciplina com os dados inseridos!' : '';
   //     })
   //     .catch(response => {
-  //       vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao buscar a disciplina.');
+  //       vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao efetuar a busca.');
   //     });
   // }
 

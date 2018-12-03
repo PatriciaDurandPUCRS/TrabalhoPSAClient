@@ -8,4 +8,4 @@ class ModalErro {
   }
 }
 
-export default angular.module('app').controller('modalSucesso', ModalErro);
+export default angular.module('app').controller('modalErro', ModalErro);

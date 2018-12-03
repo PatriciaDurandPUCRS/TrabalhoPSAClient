@@ -1,15 +1,15 @@
-<section class="">
-  <div class="Content Turma">
+<section class="Content">
+  <div class="Turma">
     <a ui-sref='login'>Voltar</a>
     <h1>Horários disponíveis</h1>
     <form name="formTurmas" ng-submit="vm.buscaTurmas(vm.disciplina)" autocomplete="off">
       <div class="Turma formulario">
         <md-input-container md-no-float>
-          <input id="usuario" type="text" placeholder="Código (00000-00)" ng-model="vm.disciplina.codCred"></input>
+          <input id="codCred" type="text" placeholder="Código (00000-00)" ng-model="vm.disciplina.codCred"></input>
         </md-input-container>
         <span>ou</span>
         <md-input-container md-no-float>
-          <input id="senha" type="text" placeholder="Nome da disciplina" ng-model="vm.disciplina.nome"></input>
+          <input id="disciplina" type="text" placeholder="Nome da disciplina" ng-model="vm.disciplina.nome"></input>
         </md-input-container>
         <button class="btn btn-default" type="submit">BUSCAR</button>
       </div>

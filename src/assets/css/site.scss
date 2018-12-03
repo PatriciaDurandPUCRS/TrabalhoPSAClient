@@ -1,12 +1,21 @@
+.header {
+  background-color: #fafafa;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
 .Content {
   background-color: #eee;
-  border-radius: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 30px;
+  margin-left: 5%;
+  margin-top: 145px;
   min-height: calc(100vh - 245px);
-  padding: 30px;
+  position: absolute;
+  width: 90%;
+
+  div {
+    padding: 20px;
+  }
 }
 
 .logo {
@@ -29,6 +38,10 @@ button {
   font-weight: 700;
   margin: 20px auto;
   padding: 10px 20px;
+}
+
+.btn-sair {
+  text-align: right;
 }
 
 .Login {

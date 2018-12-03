@@ -2,15 +2,14 @@
   angular.module('app').service('ocupacaoDataService', ocupacaoDataService);
 
   /* @ngInject */
-  function ocupacaoDataService($filter, apiService, TURMA_DETALHE_URL) {
+  function ocupacaoDataService($filter, apiService, TURMA_OCUPACAO_URL) {
     return {
-      getListaTurmas,
+      getListaTurmaOcupacao,
     };
 
-    function getListaTurmas(disciplina) {
-      const param = disciplina.codCred ? disciplina.codCred : disciplina.nome;
+    function getListaTurmaOcupacao() {
       return apiService.get({
-        route: $filter('string-format')(TURMA_DETALHE_URL, param),
+        route: TURMA_OCUPACAO_URL,
         success: (response) => { return response },
       });
     }

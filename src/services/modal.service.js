@@ -16,7 +16,7 @@ function modalService($mdDialog) {
   function openModalErro(message, cb = () => { }) {
     $mdDialog.show({
       controllerAs: 'vm',
-      controller: 'modalSucesso',
+      controller: 'modalErro',
       template: require('@/components/modal-erro/modal-erro.html'),
       locals: { message },
     }).finally(cb);
