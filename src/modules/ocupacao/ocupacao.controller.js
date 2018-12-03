@@ -10,7 +10,7 @@ function ocupacaoController(ocupacaoDataService, modalService, $rootScope) {
   vm.listaTurmaOcupacao = {};
 
   vm.$onInit = function () {
-    if (!$rootScope.autenticado || $rootScope.permissao != 'COORDENACAO') {
+    if (!$rootScope.autenticado || $rootScope.usuario.permissao != 'COORDENACAO') {
       $state.go('login');
     } else {
       vm.buscaOcupacao();

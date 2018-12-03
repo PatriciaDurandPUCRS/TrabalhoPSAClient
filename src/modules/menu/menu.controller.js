@@ -15,7 +15,7 @@ function menuController($state, $rootScope) {
   }
 
   function permissao(role) {
-    return $rootScope.permissao == role;
+    return $rootScope.usuario.permissao == role;
   }
 
   function irPara(route) {

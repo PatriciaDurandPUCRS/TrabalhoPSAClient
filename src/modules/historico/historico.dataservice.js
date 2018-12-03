@@ -2,15 +2,14 @@
   angular.module('app').service('historicoDataService', historicoDataService);
 
   /* @ngInject */
-  function historicoDataService($filter, apiService, TURMA_DETALHE_URL) {
+  function historicoDataService($filter, apiService, HISTORICO_URL) {
     return {
-      getListaTurmas,
+      getHistorico,
     };
 
-    function getListaTurmas(disciplina) {
-      const param = disciplina.codCred ? disciplina.codCred : disciplina.nome;
+    function getHistorico(matricula) {
       return apiService.get({
-        route: $filter('string-format')(TURMA_DETALHE_URL, param),
+        route: $filter('string-format')(HISTORICO_URL, matricula),
         success: (response) => { return response },
       });
     }
