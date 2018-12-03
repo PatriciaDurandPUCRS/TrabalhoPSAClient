@@ -8,7 +8,8 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
   vm.buscaTurmas = buscaTurmas;
   vm.modalService = modalService;
   vm.matriculaDataService = matriculaDataService;
-  vm.adicionarGrade = adicionarGrade;
+  vm.adicionarDisciplina = adicionarDisciplina;
+  vm.excluirDisciplina = excluirDisciplina;
   vm.grade = {};
 
   vm.$onInit = function () {
@@ -37,14 +38,13 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
     matriculaDataService.getGrade(matricula)
       .then(response => {
         vm.grade = response.data;
-        console.log(vm.grade);
       })
       .catch(response => {
         vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao efetuar a busca.');
       });
   }
 
-  function adicionarGrade(turma) {
+  function adicionarDisciplina(turma) {
     matriculaDataService.adicionarDisciplina(turma, $rootScope.usuario.matricula)
       .then(response => {
         vm.grade = response.data;
@@ -54,24 +54,20 @@ function matriculaController($rootScope, $state, matriculaDataService, modalServ
       .catch(response => {
         vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao adicionar disciplina.');
       });
-
-    // const horario= turma.horario.split(' ');
-
-    // horario.forEach(element => {
-    //   _.split(element, '', 0);    
-    // });
-    // switch (horario.char(1)) {
-    //   case 2: vm.grade.Segunda
-    //   case 3:
-    //   case 4:
-    //   case 5:
-    //   case 6:
-    //   case 7:
-    // }
-
-    // console.log(horario);
-
   }
+
+  function excluirDisciplina(turma) {
+    matriculaDataService.excluirDisciplina(turma, $rootScope.usuario.matricula)
+      .then(response => {
+        vm.grade = response.data;
+        buscaTurmas($rootScope.usuario.matricula);
+        buscaGrade($rootScope.usuario.matricula);
+      })
+      .catch(response => {
+        vm.modalService.openModalErro('Desculpa! Ocorreu um erro ao adicionar disciplina.');
+      });
+  }
+  
 
 }
 
